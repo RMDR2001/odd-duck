@@ -74,7 +74,7 @@ const selectedProduct = {
         const list = document.createElement('ul');
         for (let i = 0; i < state.totalProduct.length; i++) {
             const firstLi = document.createElement('li');
-            const info = `${state.totalProduct[i].name} tiene ${state.totalProduct[i].cont} votos`;
+            const info = `${state.totalProduct[i].name} tiene ${state.totalProduct[i].cont} votos y se ha visto ${state.totalProduct[i].views}`;
             primerLi.textContent = info;
             list.appendChild(firstLi);
         }
