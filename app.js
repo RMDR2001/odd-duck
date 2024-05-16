@@ -3,7 +3,7 @@
 const productsList = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog_duck', 'dragon', 'pen', 'pet_sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'water_can', 'wine_glass'];
 
 const state = {
-    totalProduct: [],
+    totalProducts: [],
 }
 
 function Product(name, path, view = 0, cont = 0) {
@@ -16,7 +16,7 @@ function Product(name, path, view = 0, cont = 0) {
 (function crearAlbum() {
     for (let i = 0; i < productsList.length; i++) {
         let product = new Product(productsList[i], `img/${productsList[i]}.jpg`);
-        state.totalProducto.push(product);
+        state.totalProducts.push(product);
     }
 })();
 
@@ -40,11 +40,11 @@ const selectedProduct = {
     },
 
     showImages: function () {
-        selectedProduct.objLeft = state.totalProducto[selectedProduct.getRandomIndex()];
-        selectedProduct.objCent = state.totalProducto[selectedProduct.getRandomIndex()];
-        selectedProduct.objRight = state.totalProducto[selectedProduct.getRandomIndex()];
+        selectedProduct.objLeft = state.totalProducts[selectedProduct.getRandomIndex()];
+        selectedProduct.objCent = state.totalProducts[selectedProduct.getRandomIndex()];
+        selectedProduct.objRight = state.totalProducts[selectedProduct.getRandomIndex()];
 
-        if (selectedProduct.objLeft === selectedProduct.elemCent || selectedProduct.objLeft === selectedProduct.objRight || selectedProduct.objCent === selectedProduct.objRight) {
+        if (selectedProduct.objLeft === selectedProduct.objCent || selectedProduct.objLeft === selectedProduct.objRight || selectedProduct.objCent === selectedProduct.objRight) {
             selectedProduct.showImages();
         }
 
@@ -61,20 +61,20 @@ const selectedProduct = {
     },
 
     clickCount: function (ids) {
-        for (let i = 0; i < state.totalProduct.length; i++) {
-            if (state.totalProduct[i].name === ids) {
-                state.totalProduct[i].cont += 1;
+        for (let i = 0; i < state.totalProducts.length; i++) {
+            if (state.totalProducts[i].name === ids) {
+                state.totalProducts[i].cont += 1;
                 this.totalClick += 1;
-                console.log(`${state.totalProduct[i].name} tiene ${state.totalProduct[i].cont} votos`)
+                console.log(`${state.totalProducts[i].name} tiene ${state.totalProducts[i].cont} votos`)
             }
         }
     },
 
     showResult: function () {
         const list = document.createElement('ul');
-        for (let i = 0; i < state.totalProduct.length; i++) {
+        for (let i = 0; i < state.totalProducts.length; i++) {
             const firstLi = document.createElement('li');
-            const info = `${state.totalProduct[i].name} tiene ${state.totalProduct[i].cont} votos y se ha visto ${state.totalProduct[i].views}`;
+            const info = `${state.totalProducts[i].name} tiene ${state.totalProducts[i].cont} votos y se ha visto ${state.totalProducts[i].views}`;
             primerLi.textContent = info;
             list.appendChild(firstLi);
         }
