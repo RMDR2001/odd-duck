@@ -1,6 +1,25 @@
 'use strict';
 
-const productsList = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog_duck', 'dragon', 'pen', 'pet_sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'water_can', 'wine_glass'];
+const productsList = [
+    'bag',
+    'banana',
+    'bathroom',
+    'boots',
+    'breakfast',
+    'bubblegum',
+    'chair',
+    'cthulhu',
+    'dog-duck',
+    'dragon',
+    'pen',
+    'pet-sweep',
+    'scissors',
+    'shark',
+    'sweep',
+    'tauntaun',
+    'unicorn',
+    'water-can',
+    'wine-glass'];
 
 const state = {
     totalProducts: [],
@@ -108,7 +127,7 @@ const selectedProduct = {
             }
             selectedProduct.showImages();
         } else {
-            alert('Haz click en la imagen'); zzz
+            alert('Haz click en la imagen');
         }
     }
 
