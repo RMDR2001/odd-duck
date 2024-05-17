@@ -50,7 +50,7 @@ const selectedProduct = {
     elemCent: document.getElementById('img2'),
     elemRight: document.getElementById('img3'),
     elemImage: document.getElementById('images'),
-    elemResul: document.getElementById('results'),
+    elemResult: document.getElementById('results'),
     buttonResult: document.getElementById('btnResult'),
     buttonReset: document.getElementById('btnReset'),
 
@@ -94,11 +94,11 @@ const selectedProduct = {
         for (let i = 0; i < state.totalProducts.length; i++) {
             const firstLi = document.createElement('li');
             const info = `${state.totalProducts[i].name} tiene ${state.totalProducts[i].cont} votos y se ha visto ${state.totalProducts[i].views}`;
-            primerLi.textContent = info;
+            firstLi.textContent = info;
             list.appendChild(firstLi);
         }
         const secondLi = document.createElement('li');
-        secondLi, textContent = `Total de clicks: ${this.totalClick}`;
+        secondLi.textContent = `Total de clicks: ${this.totalClick}`;
         list.appendChild(secondLi);
         this.elemResult.appendChild(list);
     },
